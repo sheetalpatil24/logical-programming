@@ -1,40 +1,30 @@
-//perfect number is When the number is equal to the sum of its positive divisors excluding the number
+
 import java.util.Scanner;
+class RevNum{
 
+	int rev(int num) {
+		int reverse = 0;
+		int temp = num;
+		while(temp>0){
+			int remaindar = temp % 10;
+			reverse = reverse*10 + remaindar;
+			temp=temp/10;
 
-public class logicalprogramming{
-public static void main(String[] args) {
-    int n, sum=0;
-    System.out.println("enter any number");
-    Scanner r= new Scanner(System.in);
-    n=r.nextInt();
+		}
+		return reverse;
+	}
+}
 
-    for(int i=1; i<n; i++)
-    {
-      if(n%i==0)
-    {
-    sum= sum + i;
-    }
- }
-    if (n==sum)
-    System.out.println("it is a perfect number");
-
-    else 
-    System.out.println("not a perfect number");
-   }
+public class logicalprogramming {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number");
+		int num = sc.nextInt();
+		RevNum a = new RevNum();
+		int result = a.rev(num);
+		System.out.println(result);
+	}
 
 }
-  
 
-
-
-
-    
-    
-    
-        
-    
-     
-    
-      
       
