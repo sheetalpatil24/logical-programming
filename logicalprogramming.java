@@ -14,6 +14,6 @@ public class logicalprogramming {
         c=a+b;
         a=b;
         b=c;
-     }
+  }
 }
 }
