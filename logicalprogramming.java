@@ -1,30 +1,40 @@
 
+
 import java.util.Scanner;
-class RevNum{
 
-	int rev(int num) {
-		int reverse = 0;
-		int temp = num;
-		while(temp>0){
-			int remaindar = temp % 10;
-			reverse = reverse*10 + remaindar;
-			temp=temp/10;
+public class logicalprogramming{
 
-		}
-		return reverse;
-	}
-}
 
-public class logicalprogramming {
-	public static void main(String[] args) {
+
+	public static void main(String[] args) 
+	{
+		char[] chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".toCharArray();
+		//ask user for number of characters in the coupon
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter a number");
-		int num = sc.nextInt();
-		RevNum a = new RevNum();
-		int result = a.rev(num);
-		System.out.println(result);
+		System.out.println("Entre a number of characters in coupon");
+		int nch = sc.nextInt();
+		//ask how many coupons user wants
+		System.out.println("Entre a number coupons required");
+		int ncp = sc.nextInt();
+		
+		int i = 0;
+		while(i<ncp) {
+			String couponCode="";
+			//StringBuffer sb=new StringBuffer();
+			i++;
+			int j=0;
+			while (j<nch)//generate a random index and append the character of that index to coupon code
+			{
+				//generate a random index for character array
+				int random=(int) (Math.random()*1000 % 62);	
+				couponCode+=chars[random%chars.length];
+				j++;
+			}	
+			//String couponCode=sb.toString();
+			System.out.println(i+"th Coupon Code: "+couponCode);
+		}
 	}
-
 }
+
 
       
